@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }  from './app.component';
 import { FormsModule }  from '@angular/forms';
 import { NewKegComponent } from './new-keg.component';
-import { KegListComponent} from './keg-list.component';
+import { KegListComponent } from './keg-list.component';
+import { EditKegComponent } from './edit-keg.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { KegListComponent} from './keg-list.component';
   declarations: [
     AppComponent,
     NewKegComponent,
-    KegListComponent
+    KegListComponent,
+    EditKegComponent
   ],
   bootstrap: [
     AppComponent ]
