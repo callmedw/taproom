@@ -27,13 +27,11 @@ export class AppComponent {
 
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
-    console.log(clickedKeg);
   }
 
   editPint(clickedKeg) {
     this.selectedKeg = clickedKeg;
-    var pintSold = clickedKeg.volume -1;
-    alert(pintSold);
+    clickedKeg.volume = clickedKeg.volume -1;
   }
 
   finishedEditing() {
