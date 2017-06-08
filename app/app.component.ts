@@ -8,7 +8,7 @@ import { Keg } from './keg.model';
       <h1 id="header">Tap Room</h1>
         <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-          <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickSenderPint)="editPint($event)"></keg-list>
+          <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickSenderPint)="editPint($event)" [childSelectedPint]="selectedPint"></keg-list>
           <new-keg (newKegSender)="addKeg($event)"></new-keg>
           <edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
         </div>
@@ -24,14 +24,15 @@ export class AppComponent {
   ];
 
   selectedKeg: Keg = null;
+  selectedPint: Keg;
 
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
   }
 
-  editPint(clickedKeg) {
-    this.selectedKeg = clickedKeg;
-    clickedKeg.volume = clickedKeg.volume -1;
+  editPint(clickedPint) {
+    this.selectedPint = clickedPint;
+    clickedPint.volume = clickedPint.volume -1;
   }
 
   finishedEditing() {
