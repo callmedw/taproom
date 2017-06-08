@@ -6,7 +6,7 @@ import { Keg } from './keg.model';
   template: `
     <ul>
       <li [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childKegList">{{currentKeg.name}} {{currentKeg.type}} by {{currentKeg.brand}},   {{currentKeg.abv}}%, &#36;{{currentKeg.price}}
-      <button (click)="editButtonHasBeenClicked(currentKeg)">Edit</button></li>
+      <button class="btn" (click)="editButtonHasBeenClicked(currentKeg)">Edit</button></li>
     </ul>
   `
 })

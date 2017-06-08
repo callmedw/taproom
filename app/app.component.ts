@@ -5,7 +5,7 @@ import { Keg } from './keg.model';
   selector: 'app-root',
   template: `
     <div class="container">
-      <h1>Tap Room</h1>
+      <h1 id="header">Tap Room</h1>
       <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></keg-list>
       <new-keg (newKegSender)="addKeg($event)"></new-keg>
       <edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
@@ -15,8 +15,8 @@ import { Keg } from './keg.model';
 
 export class AppComponent {
   masterKegList: Keg[] = [
-    new Keg('health problem', 'Your Mom brewing', 'barley wine', 13, 7),
-    new Keg('piss water', 'Your Dad brewing', 'lager', 4, 2)
+    new Keg('health problem', 'Your Mom brewing', 'barley wine', 13, 6),
+    new Keg('piss water', 'Your Dad brewing', 'lager', 4, 5)
   ];
 
   selectedKeg: Keg = null;
