@@ -25,10 +25,10 @@ import { Keg } from './keg.model';
         <label>Pint Price:</label>
         <select class="form-control" #newPrice>
           <option [value]=""> </option>
-          <option [value]=2> $2 </option>
-          <option [value]=5> $5 </option>
-          <option [value]=6> $6 </option>
-          <option [value]=7> $7 </option>
+          <option [value]="2"> $2 </option>
+          <option [value]="5"> $5 </option>
+          <option [value]="6"> $6 </option>
+          <option [value]="7"> $7 </option>
         </select>
         <button class="btn" (click)="submitForm(newName.value, newBrand.value, newType.value, newAbv.value, newPrice.value); newName.value=''; newBrand.value=''; newType.value=''; newAbv.value='';">Add Keg</button>
 
@@ -40,7 +40,7 @@ import { Keg } from './keg.model';
 export class NewKegComponent {
   @Output() newKegSender = new EventEmitter();
 
-  submitForm(name: string, brand: string, type: string, abv: number, price: number) {
+  submitForm(name: string, brand: string, type: string, abv: number, price: string) {
     var newKegToAdd: Keg = new Keg(name, brand, type, abv, price);
     this.newKegSender.emit(newKegToAdd);
   }
