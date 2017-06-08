@@ -18,6 +18,10 @@ export class KegListComponent {
   sellAPint () {
     childSelectedKeg.volume = childSelectedKeg.volume - 1;
     this.clickSenderPint.emit(childSelectedKeg.volume);
+
+    this.selectedKeg = clickedKeg;
+    selectedKeg.volume = selectedKeg.volume - 1;
+    this.clickSenderPint.emit(selectedKeg.volume);
   }
 
 }
